@@ -2,29 +2,29 @@ import React, { Component } from 'react';
 import "./App.css";
 // import Key from "./secret.env"
 import 'whatwg-fetch'
+import 'cors'
 
 class Delivery extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     data: [],
-  //   };
+  constructor () {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-  // }
-  componentDidMount() {
-    fetch('https://api.postmates.com/v1/customers/cus_LkrbfbqIW1GjLk/delivery_quotes', {
+  handleClick() {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://api.postmates.com/v1/customers/cus_LkrbfbqIW1GjLk/delivery_quotes";
+    fetch(proxyurl + url, {
       method: 'POST',
         headers: {
-          'Authorization': 'c0b1d99e-1d09-41e5-b4db-1ae82f80877a'
+          'Authorization': 'c0b1d99e-1d09-41e5-b4db-1ae82f80877a',
          },
        body: JSON.stringify({
           pickup_address: '1255 Sansome Street, San Francisco, CA',
           dropoff_address: '400 Folsom Street, San Francisco, CA',
    })
-    //    .then(results => {
-    //   console.log(results)
-    //   return results.json();
-    // })
+    }).then(results => {
+      console.log(results)
+
   })
     // .then(data => {
       // let delivery = data.results.map(dat) => {
@@ -34,7 +34,9 @@ class Delivery extends Component {
 
   render() {
     return (
-      <h1>Hi</h1>
+      <div className='button__container'>
+        <button className='button' onClick={this.handleClick}>Click Me</button>
+      </div>
     )}
 
 }
