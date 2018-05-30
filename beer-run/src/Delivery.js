@@ -11,7 +11,7 @@ class Delivery extends Component {
   }
 
   handleClick() {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const proxyurl = "https://cryptic-headland-94862.herokuapp.com/";
     const url = "https://api.postmates.com/v1/customers/cus_LkrbfbqIW1GjLk/delivery_quotes";
     fetch(proxyurl + url, {
       method: 'POST',
