@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Delivery from './Delivery.js';
-
+import Ddelivery from './Ddelivery.js';
+// import LH from './LH.js';
+require('dotenv').config()
 
 class App extends Component {
   constuctor(){
@@ -13,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Delivery />
+        <Ddelivery />
       </div>
 
 
